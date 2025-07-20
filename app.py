@@ -23,8 +23,8 @@ def connect_db():
         port=os.getenv("DB_PORT")
     )
     def create_table():
-    conn = connect_db()
-    cur = conn.cursor()
+      conn = connect_db()
+      cur = conn.cursor()
     # Example SQL - replace with your actual table definition
     cur.execute("""
         CREATE TABLE IF NOT EXISTS example_table (
@@ -33,9 +33,9 @@ def connect_db():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     """)
-    conn.commit()
-    cur.close()
-    conn.close()
+       conn.commit()
+       cur.close()
+       conn.close()
 def log_query(user_input, bot_response):
     conn = connect_db()
     cur = conn.cursor()
